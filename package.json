@@ -1,0 +1,16 @@
+{
+  "name": "vsnotes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/harumaxy/vsnotes.git",
+  "author": "harumaxy <harumaxy@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "new": "zenn new:article",
+    "dev": "zenn preview",
+    "newbook": "zenn new:book"
+  },
+  "devDependencies": {
+    "zenn-cli": "^0.1.107"
+  }
+}
