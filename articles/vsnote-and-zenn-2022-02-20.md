@@ -3,7 +3,7 @@ title: VSNotes と Zenn CLI でどこでも記事を書けるようにする
 emoji: 📘
 type: tech # tech: 技術記事 / idea: アイデア
 topics: [zenn, vscode, vsnotes, markdown]
-published: false
+published: true
 tags: []
 ---
 
@@ -14,12 +14,10 @@ tags: []
 VSCodeのコマンドパレットを介してメモの作成・編集を開始することができ、
 メモの置き場を設定しておくことでどのワークスペースからでもアクセスすることができます。
 
-自分はこの拡張機能を普段はちょっとしたメモを書くのに使っていますが、ちょっと応用したらZennの記事の編集をどこからでもできるんじゃないかと試してみました。
-
-# 目次
+自分はこの拡張機能を普段はちょっとしたメモを書くのに使っていますが、ちょっと応用したらZennの記事の編集をどこでもできるようになりました。
 
 - [VSNotes の紹介](#vsnotes-の紹介)
-- [目次](#目次)
+- [インストール・設定](#インストール設定)
   - [Step0. VSCode 拡張機能 をインストール](#step0-vscode-拡張機能-をインストール)
   - [Step1. Zenn CLI のインストール](#step1-zenn-cli-のインストール)
   - [Step2. Zenn プロジェクトの初期化](#step2-zenn-プロジェクトの初期化)
@@ -29,11 +27,13 @@ VSCodeのコマンドパレットを介してメモの作成・編集を開始�
 - [使ってみる](#使ってみる)
   - [メモ一覧](#メモ一覧)
   - [新規メモ作成](#新規メモ作成)
+  - [記事プレビュー](#記事プレビュー)
   - [git commit & push](#git-commit--push)
   - [メモを削除する・移動する](#メモを削除する移動する)
 - [終わり](#終わり)
 
 
+# インストール・設定
 ## Step0. VSCode 拡張機能 をインストール
 
 https://marketplace.visualstudio.com/items?itemName=patricklee.vsnotes
@@ -148,15 +148,15 @@ EOF
 
 ## メモ一覧
 
-https://i.gyazo.com/db5fd6cdf15aab0230333783de5ebd03.png
+[![Image from Gyazo](https://i.gyazo.com/db5fd6cdf15aab0230333783de5ebd03.png)](https://gyazo.com/db5fd6cdf15aab0230333783de5ebd03)
 
 **VSNotes** 拡張機能をインストールすると、左のツールバーに VSNotes アイコンが追加されるので、それをクリックすることでどのワークスペースからでもノートをまとめているディレクトリにアクセスすることができます。
 
 ## 新規メモ作成
 
-https://i.gyazo.com/aeeae34f675d7d050f7d14cefa830918.png
+[![Image from Gyazo](https://i.gyazo.com/aeeae34f675d7d050f7d14cefa830918.png)](https://gyazo.com/aeeae34f675d7d050f7d14cefa830918)
 
-https://i.gyazo.com/db5fd6cdf15aab0230333783de5ebd03.png
+[![Image from Gyazo](https://i.gyazo.com/972f8d2db763bff475447d3f5673c224.png)](https://gyazo.com/972f8d2db763bff475447d3f5673c224)
 
 `コマンドパレット > VSNotes: Create a New Note > zenn > articles/<記事名>` と入力することで、zennプロジェクトの`articles`ディレクトリに新しい記事が作成されます。
 
@@ -164,6 +164,19 @@ https://i.gyazo.com/db5fd6cdf15aab0230333783de5ebd03.png
 
 ```sh
 zenn new:article
+```
+
+## 記事プレビュー
+
+[![Image from Gyazo](https://i.gyazo.com/0614f8e7a16ddbce50035ec180f78e5c.png)](https://gyazo.com/0614f8e7a16ddbce50035ec180f78e5c)
+
+VSCode のコンソールで `zenn preview` コマンドを打って、表示されるURLをブラウザで開く。
+
+どのワークスペースからコマンドを打ってもプレビューできる。
+
+```
+zenn preview
+# 👀 Preview: http://localhost:8000
 ```
 
 ## git commit & push
@@ -176,14 +189,15 @@ zenn new:article
 
 残念ながら、そういう操作はコマンドパレットから直接はできなさそう。
 
-代わりに、`コマンドパレット > VSNotes: Open Note Folder` で **VSNotes** でメモを管理しているディレクトリを　VSCode で開いて操作すると良いと思います。
-
+代わりに、`コマンドパレット > VSNotes: Open Note Folder` で **VSNotes** でメモを管理しているディレクトリを開けるので、そこから操作すると良いと思います！
 
 
 # 終わり
 
-コード書いてるときに 「ソースコメントに含めるより、共通の知見として別の場所にメモりたいなぁ」 とか、 「メモついでに記事として出したいなぁ」 って感じることがあれば、そういう需要にピッタリフィットする拡張機能だと思いました。
+VSCodeによりメモを管理すると同時に、VSCodeの豊富なMarkdown拡張機能による支援を受けられるので、ものすごく良い執筆体験ができそうな気がする。
 
-便利なので皆さん使ってみてください！
+あとユースケースとして、コード書いてるときに 「ソースコメントに含めるより、共通の知見として別の場所にメモりたいなぁ」 とか、 「メモついでに記事として出したいなぁ」 って感じることがあれば、そういう需要にピッタリフィットする拡張機能だと思いました。
+
+めっちゃ便利なので皆さん使ってみてください！
 
 終わり
