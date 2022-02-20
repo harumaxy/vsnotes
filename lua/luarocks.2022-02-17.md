@@ -30,6 +30,42 @@ print(package.path)
 print(package.cpath)
 ```
 
+`luarocks path` コマンドで、luarocks プロジェクト下のモジュールを含む `LUA_PATH`, `LUA_CPATH`, `PATH`(luarocks でインストールしたの実行ファイル)が出力される
+
+```sh
+export LUA_PATH= ...
+export LUA_CPATH= ...
+export PATH= ...
+```
+
+`--bin` がデフォルト、 `--no-bin`をつけると PATH は出力されない
+
+## luarocks init について
+`luarocks path` を実行したときに出る環境変数を含む lua, luarocks 実行ファイルのエイリアスのシェルスクリプトを出す
+
+direnv などで環境自体に設定するなら不要
+
+```sh
+eval "$(luarocks path --bin)"
+```
+
+
+
+# カスタムパッケージローダー
+
+```sh
+lua -lluarocks.loader
+```
+```lua
+require "luarocks.loader"
+```
+複数のバージョンのパッケージを使うとき(詳しくは知らん)
+
+# C Compiler
+
+基本的に、Luarocks package はバイナリではなくソースで配布される。
+Cソースを含むrockの場合はコンパイラーが必要
+
 
 # Trouble shoot
 

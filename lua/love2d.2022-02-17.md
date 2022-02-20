@@ -1,7 +1,7 @@
 ---
 tags:
   - lua
-  - love
+  - love2d
 ---
 
 
